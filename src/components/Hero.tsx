@@ -48,14 +48,10 @@ export const Hero = () => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start">
             <Button size="lg" className="text-lg px-8 py-6 shadow-professional hover:shadow-glow transition-all">
               <Phone className="w-5 h-5 mr-2" />
               Call Now: 8800570133
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              <Mail className="w-5 h-5 mr-2" />
-              Get Quote
             </Button>
           </div>
         </div>
@@ -67,8 +63,8 @@ export const Hero = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full blur-sm opacity-30" />
                 <img
-                  src={ownerPhoto}
-                  alt="Business Owner"
+                  src="/lovable-uploads/112e9717-6952-4646-a741-dbed9f7d7ca7.png"
+                  alt="Rakesh Kumar - Business Owner"
                   className="relative w-48 h-48 rounded-full object-cover mx-auto shadow-professional border-4 border-primary-foreground"
                 />
                 <div className="absolute -bottom-2 -right-2 bg-accent text-accent-foreground p-2 rounded-full shadow-lg">

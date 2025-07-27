@@ -9,11 +9,22 @@ export const ServiceArea = () => {
     { name: "Lotus Temple", top: "48%", left: "53%" },
     { name: "Qutub Minar", top: "50%", left: "49%" },
     { name: "Akshardham", top: "46%", left: "54%" },
+    { name: "Taj Mahal", top: "52%", left: "55%" },
+    { name: "Agra Fort", top: "53%", left: "55%" },
+    { name: "Shimla", top: "25%", left: "55%" },
+    { name: "Manali", top: "20%", left: "55%" },
+    { name: "Rishikesh", top: "35%", left: "56%" },
+    { name: "Haridwar", top: "37%", left: "56%" },
+    { name: "Jaipur", top: "60%", left: "50%" },
+    { name: "Udaipur", top: "70%", left: "45%" },
+    { name: "Pushkar", top: "65%", left: "48%" },
   ];
 
   const serviceAreas = [
     "Delhi NCR", "Gurgaon", "Noida", "Faridabad", "Ghaziabad", 
-    "Meerut", "Panipat", "Karnal", "Ambala", "Chandigarh"
+    "Meerut", "Panipat", "Karnal", "Ambala", "Chandigarh",
+    "Shimla", "Manali", "Dharamshala", "Rishikesh", "Haridwar",
+    "Jaipur", "Udaipur", "Jodhpur", "Pushkar", "Mount Abu"
   ];
 
   return (
@@ -40,56 +51,57 @@ export const ServiceArea = () => {
                 Active Operation Zone
               </h3>
               
-              {/* Simplified India Map Container */}
-              <div className="relative mx-auto w-80 h-80 bg-gradient-to-br from-muted to-muted/50 rounded-lg border-2 border-border overflow-hidden">
-                {/* Delhi Service Zone Circle */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="relative">
-                    {/* Outer service area */}
-                    <div className="w-48 h-48 bg-secondary/20 rounded-full border-4 border-secondary border-dashed animate-pulse-glow flex items-center justify-center">
-                      {/* Inner core zone */}
-                      <div className="w-32 h-32 bg-secondary/40 rounded-full border-2 border-secondary flex items-center justify-center">
-                        <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-glow">
-                          <MapPin className="w-8 h-8 text-secondary-foreground" />
-                        </div>
-                      </div>
-                    </div>
+              {/* India Map Container */}
+              <div className="relative mx-auto w-80 h-96 bg-gradient-to-br from-muted to-muted/50 rounded-lg border-2 border-border overflow-hidden">
+                {/* India Map Shape */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg viewBox="0 0 200 280" className="w-full h-full" fill="none">
+                    {/* Simplified India outline */}
+                    <path
+                      d="M100 20 C120 25, 140 40, 150 60 L160 80 C165 100, 170 120, 160 140 L150 160 C140 180, 130 200, 120 220 L100 240 C80 235, 60 220, 50 200 L40 180 C35 160, 30 140, 40 120 L50 100 C60 80, 70 60, 80 40 C85 30, 92 25, 100 20 Z"
+                      fill="hsl(var(--muted-foreground))"
+                      fillOpacity="0.1"
+                      stroke="hsl(var(--border))"
+                      strokeWidth="2"
+                    />
                     
-                    {/* Zone Label */}
-                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-                      <Badge variant="secondary" className="font-semibold">
-                        Active Zone
-                      </Badge>
-                    </div>
-                  </div>
+                    {/* Red circle around North India */}
+                    <circle
+                      cx="100"
+                      cy="80"
+                      r="45"
+                      fill="none"
+                      stroke="hsl(var(--destructive))"
+                      strokeWidth="3"
+                      strokeDasharray="5,5"
+                      className="animate-pulse-glow"
+                    />
+                    
+                    {/* Delhi marker */}
+                    <circle
+                      cx="100"
+                      cy="80"
+                      r="4"
+                      fill="hsl(var(--destructive))"
+                      className="shadow-glow"
+                    />
+                  </svg>
                 </div>
-
-                {/* Landmark Markers */}
-                {landmarks.map((landmark, index) => (
-                  <div
-                    key={landmark.name}
-                    className="absolute transform -translate-x-1/2 -translate-y-1/2 animate-scale-in"
-                    style={{ top: landmark.top, left: landmark.left }}
-                    data-delay={index * 200}
-                  >
-                    <div className="relative group">
-                      <div className="w-3 h-3 bg-accent rounded-full shadow-lg pulse" />
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap">
-                          {landmark.name}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                
+                {/* Zone Label */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                  <Badge variant="secondary" className="font-semibold border-destructive text-destructive">
+                    Primary Service Zone
+                  </Badge>
+                </div>
               </div>
               
               <div className="text-center mt-6">
-                <p className="text-lg font-semibold text-primary">
+                <p className="text-lg font-semibold text-destructive">
                   We Operate Actively in This Region
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Covering 200+ km radius from Delhi
+                  Covering 300+ km radius including Popular Tourist Destinations
                 </p>
               </div>
             </div>
@@ -106,15 +118,15 @@ export const ServiceArea = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {serviceAreas.map((area, index) => (
                 <div
                   key={area}
-                  className="flex items-center gap-3 p-4 bg-card rounded-lg border border-border hover:border-primary/30 transition-all duration-300 animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="flex items-center gap-3 p-3 bg-card rounded-lg border border-border hover:border-primary/30 transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium text-foreground">{area}</span>
+                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="font-medium text-foreground text-sm">{area}</span>
                 </div>
               ))}
             </div>
@@ -129,7 +141,7 @@ export const ServiceArea = () => {
                     Extended Coverage Available
                   </h4>
                   <p className="text-sm text-primary/80">
-                    Need service beyond our primary zone? We offer extended coverage to nearby states including Uttarakhand, Rajasthan, and Himachal Pradesh on request.
+                    We actively serve popular destinations in Himachal Pradesh, Rajasthan, and Uttarakhand including hill stations, heritage cities, and spiritual centers.
                   </p>
                 </div>
               </div>
