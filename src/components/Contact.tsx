@@ -33,9 +33,9 @@ export const Contact = () => {
   ];
 
   const businessHours = [
-    { day: "Monday - Saturday", time: "6:00 AM - 10:00 PM" },
-    { day: "Sunday", time: "7:00 AM - 9:00 PM" },
-    { day: "Emergency Service", time: "24/7 Available" }
+    { day: "Monday - Saturday", time: "24/7 Service" },
+    { day: "Sunday", time: "24/7 Service" },
+    { day: "Emergency Service", time: "Always Available" }
   ];
 
   return (

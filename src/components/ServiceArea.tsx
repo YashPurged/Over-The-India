@@ -21,10 +21,18 @@ export const ServiceArea = () => {
   ];
 
   const serviceAreas = [
-    "Delhi NCR", "Gurgaon", "Noida", "Faridabad", "Ghaziabad", 
-    "Meerut", "Panipat", "Karnal", "Ambala", "Chandigarh",
-    "Shimla", "Manali", "Dharamshala", "Rishikesh", "Haridwar",
-    "Jaipur", "Udaipur", "Jodhpur", "Pushkar", "Mount Abu"
+    "Delhi NCR • India Gate • Red Fort • Lotus Temple", 
+    "Agra • Taj Mahal • Agra Fort • Fatehpur Sikri",
+    "Jaipur • Amber Fort • City Palace • Hawa Mahal",
+    "Udaipur • Lake Palace • City Palace • Jagdish Temple",
+    "Shimla • Mall Road • Christ Church • Jakhu Temple",
+    "Manali • Solang Valley • Rohtang Pass • Old Manali",
+    "Rishikesh • Ganga Aarti • Laxman Jhula • Beatles Ashram",
+    "Haridwar • Har Ki Pauri • Ganga Aarti • Mansa Devi",
+    "Dharamshala • Dalai Lama Temple • McLeod Ganj",
+    "Chandigarh • Rock Garden • Sukhna Lake • Rose Garden",
+    "Pushkar • Brahma Temple • Pushkar Lake • Camel Safari",
+    "Jodhpur • Mehrangarh Fort • Blue City • Umaid Bhawan"
   ];
 
   return (
@@ -51,57 +59,189 @@ export const ServiceArea = () => {
                 Active Operation Zone
               </h3>
               
-              {/* India Map Container */}
-              <div className="relative mx-auto w-80 h-96 bg-gradient-to-br from-muted to-muted/50 rounded-lg border-2 border-border overflow-hidden">
+              {/* Complete India Map Container */}
+              <div className="relative mx-auto w-96 h-[500px] bg-gradient-to-br from-blue-50 to-green-50 rounded-lg border-2 border-border overflow-hidden shadow-lg">
                 {/* India Map Shape */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 200 280" className="w-full h-full" fill="none">
-                    {/* Simplified India outline */}
+                  <svg viewBox="0 0 300 400" className="w-full h-full" fill="none">
+                    {/* Complete India outline */}
                     <path
-                      d="M100 20 C120 25, 140 40, 150 60 L160 80 C165 100, 170 120, 160 140 L150 160 C140 180, 130 200, 120 220 L100 240 C80 235, 60 220, 50 200 L40 180 C35 160, 30 140, 40 120 L50 100 C60 80, 70 60, 80 40 C85 30, 92 25, 100 20 Z"
-                      fill="hsl(var(--muted-foreground))"
-                      fillOpacity="0.1"
+                      d="M150 30 C180 35, 220 55, 240 85 L250 110 C260 140, 270 170, 265 200 L255 230 C245 260, 235 290, 220 320 L200 350 C180 375, 160 390, 150 395 C140 390, 120 375, 100 350 L80 320 C65 290, 55 260, 45 230 L35 200 C30 170, 40 140, 50 110 L60 85 C80 55, 120 35, 150 30 Z M70 100 C60 120, 65 140, 75 160 M220 120 C230 140, 225 160, 215 180"
+                      fill="hsl(var(--muted))"
+                      fillOpacity="0.3"
                       stroke="hsl(var(--border))"
                       strokeWidth="2"
                     />
                     
-                    {/* Red circle around North India */}
+                    {/* Delhi-NCR Zone */}
                     <circle
-                      cx="100"
-                      cy="80"
-                      r="45"
+                      cx="150"
+                      cy="130"
+                      r="25"
                       fill="none"
                       stroke="hsl(var(--destructive))"
                       strokeWidth="3"
-                      strokeDasharray="5,5"
-                      className="animate-pulse-glow"
+                      strokeDasharray="8,4"
+                      className="animate-pulse"
                     />
                     
-                    {/* Delhi marker */}
+                    {/* Himachal Pradesh Zone */}
                     <circle
-                      cx="100"
-                      cy="80"
-                      r="4"
-                      fill="hsl(var(--destructive))"
-                      className="shadow-glow"
+                      cx="130"
+                      cy="90"
+                      r="20"
+                      fill="none"
+                      stroke="hsl(var(--destructive))"
+                      strokeWidth="2"
+                      strokeDasharray="6,3"
+                      className="animate-pulse"
+                      style={{ animationDelay: "0.5s" }}
                     />
+                    
+                    {/* Rajasthan Zone */}
+                    <circle
+                      cx="120"
+                      cy="180"
+                      r="30"
+                      fill="none"
+                      stroke="hsl(var(--destructive))"
+                      strokeWidth="2"
+                      strokeDasharray="6,3"
+                      className="animate-pulse"
+                      style={{ animationDelay: "1s" }}
+                    />
+                    
+                    {/* Haryana Zone */}
+                    <circle
+                      cx="140"
+                      cy="120"
+                      r="15"
+                      fill="none"
+                      stroke="hsl(var(--destructive))"
+                      strokeWidth="2"
+                      strokeDasharray="4,2"
+                      className="animate-pulse"
+                      style={{ animationDelay: "1.5s" }}
+                    />
+                    
+                    {/* Tourist Destination Pins */}
+                    
+                    {/* Delhi Area */}
+                    <g className="tourist-pin">
+                      <circle cx="150" cy="130" r="3" fill="hsl(var(--primary))" />
+                      <text x="155" y="125" className="text-xs font-bold fill-primary">Delhi</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="145" cy="135" r="2" fill="hsl(var(--secondary))" />
+                      <text x="148" y="142" className="text-xs fill-secondary">India Gate</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="155" cy="125" r="2" fill="hsl(var(--secondary))" />
+                      <text x="158" y="120" className="text-xs fill-secondary">Red Fort</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="165" cy="140" r="2" fill="hsl(var(--secondary))" />
+                      <text x="168" y="135" className="text-xs fill-secondary">Akshardham</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="140" cy="145" r="2" fill="hsl(var(--secondary))" />
+                      <text x="143" y="152" className="text-xs fill-secondary">Qutub Minar</text>
+                    </g>
+                    
+                    {/* Agra */}
+                    <g className="tourist-pin">
+                      <circle cx="170" cy="155" r="3" fill="hsl(var(--primary))" />
+                      <text x="175" y="150" className="text-xs font-bold fill-primary">Agra</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="168" cy="158" r="2" fill="hsl(var(--accent))" />
+                      <text x="172" y="165" className="text-xs fill-accent">Taj Mahal</text>
+                    </g>
+                    
+                    {/* Himachal Pradesh */}
+                    <g className="tourist-pin">
+                      <circle cx="130" cy="85" r="3" fill="hsl(var(--primary))" />
+                      <text x="135" y="80" className="text-xs font-bold fill-primary">Shimla</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="125" cy="75" r="2" fill="hsl(var(--accent))" />
+                      <text x="128" y="70" className="text-xs fill-accent">Manali</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="120" cy="95" r="2" fill="hsl(var(--secondary))" />
+                      <text x="123" y="102" className="text-xs fill-secondary">Dharamshala</text>
+                    </g>
+                    
+                    {/* Rajasthan */}
+                    <g className="tourist-pin">
+                      <circle cx="115" cy="170" r="3" fill="hsl(var(--primary))" />
+                      <text x="120" y="165" className="text-xs font-bold fill-primary">Jaipur</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="105" cy="190" r="2" fill="hsl(var(--accent))" />
+                      <text x="108" y="197" className="text-xs fill-accent">Udaipur</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="125" cy="185" r="2" fill="hsl(var(--secondary))" />
+                      <text x="128" y="192" className="text-xs fill-secondary">Pushkar</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="90" cy="175" r="2" fill="hsl(var(--secondary))" />
+                      <text x="93" y="182" className="text-xs fill-secondary">Jodhpur</text>
+                    </g>
+                    
+                    {/* Uttarakhand */}
+                    <g className="tourist-pin">
+                      <circle cx="165" cy="105" r="2" fill="hsl(var(--accent))" />
+                      <text x="168" y="100" className="text-xs fill-accent">Rishikesh</text>
+                    </g>
+                    
+                    <g className="tourist-pin">
+                      <circle cx="170" cy="95" r="2" fill="hsl(var(--secondary))" />
+                      <text x="173" y="90" className="text-xs fill-secondary">Haridwar</text>
+                    </g>
+                    
+                    {/* Haryana */}
+                    <g className="tourist-pin">
+                      <circle cx="140" cy="115" r="2" fill="hsl(var(--secondary))" />
+                      <text x="143" y="110" className="text-xs fill-secondary">Kurukshetra</text>
+                    </g>
                   </svg>
                 </div>
                 
-                {/* Zone Label */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                  <Badge variant="secondary" className="font-semibold border-destructive text-destructive">
-                    Primary Service Zone
+                {/* Zone Labels */}
+                <div className="absolute top-4 left-4">
+                  <Badge variant="secondary" className="font-semibold border-destructive text-destructive mb-2">
+                    🇮🇳 Complete India Coverage
                   </Badge>
+                </div>
+                
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <Badge variant="outline" className="text-xs bg-destructive/10">Delhi NCR</Badge>
+                    <Badge variant="outline" className="text-xs bg-destructive/10">Himachal</Badge>
+                    <Badge variant="outline" className="text-xs bg-destructive/10">Rajasthan</Badge>
+                    <Badge variant="outline" className="text-xs bg-destructive/10">Haryana</Badge>
+                  </div>
                 </div>
               </div>
               
               <div className="text-center mt-6">
-                <p className="text-lg font-semibold text-destructive">
-                  We Operate Actively in This Region
+                <p className="text-lg font-semibold text-destructive mb-2">
+                  🌟 Premium Tourist Destinations Coverage
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Covering 300+ km radius including Popular Tourist Destinations
+                <p className="text-sm text-muted-foreground">
+                  Specialized routes for international travelers • UNESCO World Heritage Sites • Hill Stations • Spiritual Centers
                 </p>
               </div>
             </div>
